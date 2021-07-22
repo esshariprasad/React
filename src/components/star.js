@@ -5,7 +5,8 @@ export default function StarRating({ totalStars = 5 }) {
   const [selectedStars, setSelectedStars] = useState(0);
   return (
     <>
-      {createArray(totalStars).map((n, i) => (
+      {
+      createArray(totalStars).map((n, i) => (
         <Star
           key={i}
           selected={selectedStars > i} // returns true if more than selected start sate
@@ -18,6 +19,8 @@ export default function StarRating({ totalStars = 5 }) {
     </>
   );
 }
+
+const createArray = length => [...Array(length)]; // creates array with undefined properties
 
 
 const Star = ({ selected = false, onSelect = f => f }) => (

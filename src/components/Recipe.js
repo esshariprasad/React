@@ -3,6 +3,7 @@
 import React from "react";
 import IngredientsList from "./IngredientsList";
 import Instructions from "./Instructions";
+import StarRating from "./star";
 
 function Recipe({ name, ingredients, steps }) {
   return (
@@ -10,6 +11,8 @@ function Recipe({ name, ingredients, steps }) {
       <h1>{name}</h1>
       <IngredientsList list={ingredients} />
       <Instructions title="Cooking Instructions" steps={steps} />
+      <StarRating totalStars = {5}/>
+      
     </section>
   );
 }
