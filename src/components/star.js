@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { FaStar } from "react-icons/fa";
 
-export default function StarRating({ totalStars = 5 }) {
-  const [selectedStars, setSelectedStars] = useState(0);
+export default function StarRating({ totalStars = 5,selectedStars=0 }) {
+  // const [selectedStars, setSelectedStars] = useState(0); not required as we passing them down now
   return (
     <>
       {
@@ -10,7 +10,7 @@ export default function StarRating({ totalStars = 5 }) {
         <Star
           key={i}
           selected={selectedStars > i} // returns true if more than selected start sate
-          onSelect={() => setSelectedStars(i + 1)} // onclick hook a new state
+          
         />
       ))}
       <p>
@@ -19,6 +19,8 @@ export default function StarRating({ totalStars = 5 }) {
     </>
   );
 }
+
+
 
 const createArray = length => [...Array(length)]; // creates array with undefined properties
 
